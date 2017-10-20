@@ -37,22 +37,22 @@ class SubjectsController < ApplicationController
   get '/subjects/:id/edit' do
     if logged_in?
       @subject = Subject.find_by_id(params[:id])
-      if @subject.user_id == current_user.id
-       erb :'subjects/edit_subject'
-      else
-        redirect to '/subjects'
-      end
+      #if @subject.user_id == current_user.id
+      erb :'subjects/edit_subject'
+      #else
+        #redirect to '/subjects'
+      #end
     else
       redirect to '/login'
     end
   end
 
   patch '/subjects/:id' do
-    if params[:title] == ""
+    if params[:content] == ""
       redirect to "/subjects/#{params[:id]}/edit"
     else
       @subject = Subject.find_by_id(params[:id])
-      @subject.title = params[:title]
+      @subject.content = params[:content]
       @subject.save
       redirect to "/subjects/#{@subject.id}"
     end

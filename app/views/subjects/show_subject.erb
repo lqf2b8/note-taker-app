@@ -1,8 +1,13 @@
-<p><%= @subject.title %>
+<h3><%= @subject.title %> Notes</h3>
 
-<form method="post" action="/subject/<%=@subject.id%>/delete">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Tweet">
+<form method="get" action="/subjects/<%=@subject.id%>/edit">
+  <input id="hidden" type="hidden" name="_method" value="GET">
+  <input type="submit" value="Edit Note">
 </form>
+<form method="post" action="/subjects/<%=@subject.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Note">
+</form>
+<p><%= @subject.content %>
 
-<a href="/subject/<%=@subject.id%>/edit">Edit Subject </a>
+
