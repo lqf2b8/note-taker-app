@@ -1,0 +1,9 @@
+<p> Welcome <%= current_user.username %>
+<h2> Subjects </h2>
+
+<% @subjects.each do |subject| %>
+  <div>
+  	<a href="/subjects/<%= @subject.id %>"> <%= subject.title %> </a>
+    
+  </div>
+<% end %>

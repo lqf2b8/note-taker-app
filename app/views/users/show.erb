@@ -1,0 +1,6 @@
+<p> Here are your subjects, <%= @user.username %>
+<% @user.subjects.each do |subject| %>
+  <div>
+    <%= subject.title %>
+  </div>
+<% end %>

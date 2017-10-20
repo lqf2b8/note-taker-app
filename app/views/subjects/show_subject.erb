@@ -1,0 +1,8 @@
+<p><%= @subject.title %>
+
+<form method="post" action="/subject/<%=@subject.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Tweet">
+</form>
+
+<a href="/subject/<%=@subject.id%>/edit">Edit Subject </a>
