@@ -1,7 +1,7 @@
 class SubjectsController < ApplicationController
   get '/subjects' do
     if logged_in?
-      @subjects = Subject.all
+      @subjects = current_user.subjects.all
       erb :'subjects/subjects'
     else
       redirect to '/login'
