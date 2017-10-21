@@ -37,11 +37,7 @@ class SubjectsController < ApplicationController
   get '/subjects/:id/edit' do
     if logged_in?
       @subject = Subject.find_by_id(params[:id])
-      #if @subject.user_id == current_user.id
       erb :'subjects/edit_subject'
-      #else
-        #redirect to '/subjects'
-      #end
     else
       redirect to '/login'
     end

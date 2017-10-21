@@ -2,12 +2,16 @@
 
 <form method="get" action="/subjects/<%=@subject.id%>/edit">
   <input id="hidden" type="hidden" name="_method" value="GET">
-  <input type="submit" value="Edit Note">
+  <input type="submit" style= "width:100px;" value="Edit Note">
 </form>
 <form method="post" action="/subjects/<%=@subject.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Note">
+  <input type="submit" style= "width:100px;" value="Delete Note">
 </form>
-<p><%= @subject.content %>
+<form method="get" action="/subjects">
+  <input id="hidden" type="hidden" name="_method" value="GET">
+  <input type="submit" style= "width:100px;" value="All Subjects">
+</form>
+<textarea readonly id="text" name="content" value="<%= @subject.content %> rows="100" cols="100" style="overflow: hidden; word-wrap: break-word; resize: none; height: 500px; "><%= @subject.content %></textarea> 
 
 

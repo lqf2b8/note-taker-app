@@ -9,9 +9,10 @@
     <nav>
       <% if logged_in? %>
         
-        <a href="/subjects/new"> Create Notes </a>
-        <a href="/logout"> Log Out </a>
         <p>Welcome, <%=current_user.username %></p>
+        <a href="/subjects/new"> Create Subject </a>
+        <a href="/logout"> Log Out </a>
+        
 
       <% else %>
         <a href="/signup">Sign Up</a>
